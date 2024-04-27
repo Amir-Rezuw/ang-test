@@ -1,0 +1,46 @@
+<div class="card-container">
+  <img
+    [src]="course.courseImagePath"
+    alt="course header"
+    class="course-header"
+  />
+  <div class="course-register">
+    <div class="instructor-info">
+      <img
+        [src]="course.instructorImagePath"
+        alt="mentor"
+        class="mentor-profile"
+      />
+      <h6>{{ course.instructorName }}</h6>
+    </div>
+    <button
+      (click)="onSelectCourse()"
+      class="btn-primary"
+      [disabled]="course.doesUserRegistered"
+    >
+      {{ course.doesUserRegistered ? "Purchased" : "Learn" }}
+    </button>
+  </div>
+  <h3>{{ course.courseName }}</h3>
+  <div class="course-details">
+    <div>
+      <img src="../../../assets/clock.svg" alt="" />
+      <p>{{ course.courseDuration }}</p>
+    </div>
+    <div>
+      <img src="../../../assets/arrow-up.svg" alt="" />
+      <p>Lorem.</p>
+    </div>
+  </div>
+  <div class="pricing">
+    <div>
+      <h2>{{ course.coursePrice | currency }}</h2>
+    </div>
+    <div class="rating">
+      <p>{{ course.courseRating }}</p>
+      <div *ngFor="let item of [1, 2, 3, 4, 5]">
+        <img [src]="returnStarStyle(item)" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

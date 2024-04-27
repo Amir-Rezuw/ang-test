@@ -1,0 +1,68 @@
+.card-container {
+  border: 1px solid var(--light-green);
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 370px;
+  border-radius: 20px;
+}
+.course-header {
+  object-fit: cover;
+}
+.instructor-info {
+  display: flex;
+  align-items: center;
+  h6 {
+    margin-left: 5px;
+  }
+}
+.course-register {
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 80px;
+  }
+}
+.course-details {
+  display: flex;
+  justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 12px;
+    }
+  }
+}
+.pricing {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--button-green);
+  h2 {
+    font-size: 15px;
+  }
+  p {
+    color: #000;
+  }
+}
+.rating {
+  display: flex;
+  align-items: center;
+  p {
+    font-size: 12px;
+  }
+  img {
+    width: 15px;
+  }
+}
+.mentor-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

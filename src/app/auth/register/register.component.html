@@ -1,0 +1,81 @@
+<main class="container">
+  <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+    <p class="text-error" *ngIf="error">{{ error }}</p>
+    <input ngModel name="name" type="text" placeholder="Name" required />
+    <input ngModel name="email" type="email" placeholder="Email" required />
+    <input
+      ngModel
+      name="password"
+      type="password"
+      placeholder="Password"
+      required
+    />
+    <input
+      required
+      ngModel
+      name="passwordConfirmation"
+      type="password"
+      placeholder="Confirm Password"
+    />
+    <p
+      class="text-error"
+      *ngIf="
+        !doesPasswordsMatch ||
+        registerForm.value.password !== registerForm.value.passwordConfirmation
+      "
+    >
+      * Passwords does not match
+    </p>
+    <div class="personal-info">
+      <div>
+        <label for="profile" class="profile-label">
+          <img
+            [src]="userPictureSrc"
+            alt="profile"
+            class="user-profile-picture"
+          />
+        </label>
+        <input
+          #userProfilePicture="ngModel"
+          ngModel
+          required
+          type="file"
+          name="profile"
+          id="profile"
+          (change)="onSelectPicture($event)"
+        />
+      </div>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" value="male" ngModel required />
+          Male </label
+        ><br />
+        <label>
+          <input type="radio" name="gender" value="female" ngModel required />
+          Female </label
+        ><br />
+      </div>
+    </div>
+    <div>
+      <input
+        ngModel
+        type="checkbox"
+        name="acceptedTerms"
+        id="acceptedTerms"
+        required
+      />
+      <label for="acceptedTerms">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+        adipisci aliquam? Ipsa est necessitatibus voluptatum repellat nostrum
+        repudiandae aspernatur animi.
+      </label>
+    </div>
+    <button
+      [disabled]="checkIsButtonDisabled(registerForm)"
+      class="btn-primary"
+      type="submit"
+    >
+      Create an account
+    </button>
+  </form>
+</main>

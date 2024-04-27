@@ -1,0 +1,39 @@
+<header>
+  <img src="../../assets/header.svg" alt="header" />
+  <nav>
+    <div>
+      <a [routerLink]="authService.isUserLoggedIn ? 'courses' : 'login'"
+        >Logo</a
+      >
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a>Home</a></li>
+        <li>
+          <a routerLink="courses" routerLinkActive="active-link">All Course</a>
+        </li>
+        <li><a>Pages</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contact</a></li>
+        <li *ngIf="authService.isUserLoggedIn">
+          <a routerLinkActive="active-link" routerLink="my-courses"
+            >My courses</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="auth" *ngIf="!this.authService.isUserLoggedIn">
+      <a routerLinkActive="active-link" routerLink="login">Sign In</a>
+      <a routerLink="register" routerLinkActive="active-link" class="register"
+        >Sign Up</a
+      >
+    </div>
+    <button
+      (click)="this.authService.logout()"
+      *ngIf="this.authService.isUserLoggedIn"
+      class="log-out"
+    >
+      <img src="../../assets/logout.svg" alt="" />
+    </button>
+  </nav>
+</header>

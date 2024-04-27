@@ -1,0 +1,7 @@
+<main class="container">
+  <div class="course-list-container">
+    <div *ngFor="let item of courses; let i = index">
+      <app-course-card [course]="item" [courseIndex]="i"></app-course-card>
+    </div>
+  </div>
+</main>

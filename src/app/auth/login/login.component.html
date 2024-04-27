@@ -1,0 +1,16 @@
+<main class="container">
+  <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+    <p class="text-error" *ngIf="error">{{ error }}.</p>
+    <input ngModel name="email" type="email" placeholder="Email" required />
+    <input
+      ngModel
+      name="password"
+      type="password"
+      placeholder="Password"
+      required
+    />
+    <button [disabled]="checkIsButtonDisabled(loginForm)" class="btn-primary">
+      login
+    </button>
+  </form>
+</main>

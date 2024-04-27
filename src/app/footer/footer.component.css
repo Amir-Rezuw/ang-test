@@ -1,0 +1,35 @@
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--light-green);
+
+  padding: 50px 0;
+  section {
+    width: 250px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+    ul {
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.subscription {
+  div {
+    display: flex;
+    flex-direction: column;
+    input {
+      background-color: #ccc;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    div {
+      width: 120px;
+      height: 50px;
+    }
+  }
+}
